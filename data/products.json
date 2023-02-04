@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "Tourmaline & Eucalyptus Bar Soap",
+    "price": 12,
+    "description": "Recharge your skin with the super energizing power of finely crushed tourmaline powder blended with natural complexion",
+    "image": "/images/1.png"
+  },
+  {
+    "id": 2,
+    "name": "Tourmaline & Argan Oil Bar Soap",
+    "price": 12,
+    "description": "Recharge your skin with the super energizing power of finely crushed tourmaline powder blended with natural complexion",
+    "image": "/images/2.png"
+  },
+  {
+    "id": 3,
+    "name": "Tourmaline & Tea Tree Bar Soap",
+    "price": 12,
+    "description": "Recharge your skin with the super energizing power of finely crushed tourmaline powder blended with natural complexion",
+    "image": "/images/3.png"
+  },
+  {
+    "id": 4,
+    "name": "Tourmaline Unscented Bar Soap",
+    "price": 12,
+    "description": "Recharge your skin with the super energizing power of finely crushed tourmaline powder blended with natural complexion",
+    "image": "/images/4.png"
+  },
+  {
+    "id": 5,
+    "name": "Tourmaline & Tea Tree Bar Soap",
+    "price": 12,
+    "description": "Recharge your skin with the super energizing power of finely crushed tourmaline powder blended with natural complexion",
+    "image": "/images/3.png"
+  },
+  {
+    "id": 6,
+    "name": "Tourmaline Unscented Bar Soap",
+    "price": 12,
+    "description": "Recharge your skin with the super energizing power of finely crushed tourmaline powder blended with natural complexion",
+    "image": "/images/4.png"
+  },
+  {
+    "id": 7,
+    "name": "Tourmaline & Argan Oil Bar Soap",
+    "price": 12,
+    "description": "Recharge your skin with the super energizing power of finely crushed tourmaline powder blended with natural complexion",
+    "image": "/images/2.png"
+  }
+]
