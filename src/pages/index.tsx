@@ -1,45 +1,41 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Fragment, useState } from "react";
-import styled from "styled-components";
-import tw from "twin.macro";
+import { Fragment, useEffect } from "react";
 import Store from "../components/Store";
+import { useProductContext } from "../contexts/ProductsContext";
 import { Product } from "../types/Product";
 import { getProducts } from "./api";
-
-const HomeCard = styled.div`
-  ${tw`flex w-full bg-primary h-2`}
-`;
-
 interface HomeProps {
-  state: Product[];
+  products: Product[];
 }
 
-const Home: NextPage<HomeProps> = ({state}) => {
+const Home: NextPage<HomeProps> = ({ products }) => {
+  const { setProducts } = useProductContext();
 
-  const [products,setProducts] = useState(state);
+  useEffect(() => {
+    setProducts(products);
+  }, []);
 
   return (
     <Fragment>
-      <HomeCard />
       <Head>
         <title>Recruitment Test Task</title>
         <meta name="description" content="Recruitment Test Task" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Store products={products} setProducts={setProducts}/>
+      <Store />
     </Fragment>
   );
 };
 
 export default Home;
 
-export async function getStaticProps()  {
-  const state = getProducts();
+export async function getStaticProps() {
+  const products = getProducts();
   return {
     props: {
-      state,
+      products,
     },
-    revalidate: 10
+    revalidate: 10,
   };
 }

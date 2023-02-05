@@ -1,27 +1,21 @@
-import React, { Dispatch, Fragment, SetStateAction } from "react";
-import styled from "styled-components";
-import tw from "twin.macro";
+import React, { Fragment } from "react";
+
+import { useProductContext } from "../contexts/ProductsContext";
 import { Product as ProductType } from "../types/Product";
+import { CartIcon } from "./CartIcon";
 import Product from "./Product";
+import { StoreCart, StoreCartValue, StoreContainer, StoreTitle } from "./Store.styles";
 
-const StoreContainer = styled.section`
-  ${tw`p-8 w-full grid items-center justify-items-center gap-2.5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4`}
-`;
+const Store: React.FC = () => {
+  const { products, totalQuantity } = useProductContext();
 
-const StoreTitle = styled.h1`
-  ${tw`text-6xl text-center`}
-`
-
-interface StoreProps {
-  products: ProductType[];
-  setProducts: Dispatch<SetStateAction<ProductType[]>>;
-}
-
-const Store: React.FC<StoreProps> = ({ products, setProducts }) => {
-  console.log(products);
   return (
     <Fragment>
       <StoreTitle>Products</StoreTitle>
+      <StoreCart>
+        <CartIcon />
+        <StoreCartValue>{totalQuantity}</StoreCartValue>
+      </StoreCart>
       <StoreContainer>
         {products.map((product: ProductType) => {
           return <Product key={product.id} product={product} />;
